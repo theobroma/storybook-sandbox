@@ -48,7 +48,9 @@
     "lint": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
     "serve": "serve -s build",
     "predeploy": "npm run build",
-    "deploy": "netlify deploy -p"
+    "deploy": "netlify deploy -p",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "husky": {
     "hooks": {
@@ -68,6 +70,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -83,6 +95,12 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.3.5",
+    "@storybook/addon-essentials": "^6.3.5",
+    "@storybook/addon-links": "^6.3.5",
+    "@storybook/node-logger": "^6.3.5",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.5",
     "eslint": "^7.31.0",
     "eslint-config-airbnb-typescript-prettier": "^4.2.0",
     "husky": "^7.0.1",
