@@ -1,13 +1,8 @@
-# MovieDB App
+# Storybook sandbox
 
-##### React & Material UI application.
+## Links
 
-Powered by [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction).
-
-Search, See primary information, See trailers of different movies.
-
-Register your API Key at
-[https://www.themoviedb.org/](https://www.themoviedb.org/)
+[Usefull links](./docs/links.md)
 
 ## Quick Start
 
