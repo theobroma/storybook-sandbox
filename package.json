@@ -1,6 +1,7 @@
 {
   "name": "storybook-sandbox",
   "version": "1.0.0",
+  "license": "ISC",
   "private": false,
   "dependencies": {
     "@material-ui/core": "^4.12.2",
@@ -50,7 +51,9 @@
     "predeploy": "npm run build",
     "deploy": "netlify deploy -p",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "storybook:build": "build-storybook -s public",
+    "storybook:upload": "gh-pages -d storybook-static --git \"$(which git)\"",
+    "storybook:clean": "rimraf storybook-static"
   },
   "husky": {
     "hooks": {
@@ -103,10 +106,12 @@
     "@storybook/react": "^6.3.5",
     "eslint": "^7.31.0",
     "eslint-config-airbnb-typescript-prettier": "^4.2.0",
+    "gh-pages": "^3.2.3",
     "husky": "^7.0.1",
     "lint-staged": "^11.0.1",
     "netlify-cli": "^5.0.0",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2"
   },
   "resolutions": {
     "babel-loader": "8.1.0"
